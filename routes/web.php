@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // this is the default route
     return view('welcome');
 });
 
 
-// this is the route for the form after submitting the form
+
 Route::post('/distribute', [CardController::class, 'distributeCards'])->name('distribute.cards');

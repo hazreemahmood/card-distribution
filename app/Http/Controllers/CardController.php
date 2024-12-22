@@ -10,15 +10,12 @@ class CardController extends Controller
         return view('cards.index'); // Show the form
     }
 
-    // This function will distribute the cards to the players
     public function distributeCards(Request $request)
     {
-        // Validate the input
         $validated = $request->validate([
             'people' => 'required|integer|min:1|max:53', // Validate input
         ]);
 
-        // Get the number of people
         $numPeople = $validated['people'];
 
         // Card deck initialization

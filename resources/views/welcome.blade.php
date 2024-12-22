@@ -41,7 +41,6 @@
                 return;
             }
 
-            // Send AJAX request to distribute cards
             $.ajax({
                 type: 'POST',
                 url: '{{ route("distribute.cards") }}',
@@ -50,7 +49,6 @@
                     people: numPeople
                 },
                 success: function(response) {
-                    // Display the result of card distribution
                     if (response.status === 'success') {
                         let resultHtml = '';
                         response.data.forEach((cards, index) => {
@@ -61,7 +59,6 @@
                     }
                 },
                 error: function() {
-                    // Display error message if card distribution fails
                     alert("Error while distributing cards.");
                 }
             });
