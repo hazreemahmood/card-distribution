@@ -16,7 +16,9 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - access the site using the url given after "php artisan serve"
 
 ## First Task
-It takes about 1 and half day to finish it.
+Programming Test to create card distribution.
+
+It takes me about 1 and half day to finish it.
 
 ## Second Task
 SQL Script, This task i'm not sure how to help with this but I tried my best to give suggestion and help. It took me about 30 min - 1 hour to write a suggestion.
