@@ -8,6 +8,7 @@ Pagination can be implemented using these clauses to improve performance by redu
 3. Use GROUP BY and ORDER BY efficiently: The GROUP BY and ORDER BY clauses can impact the performance of the query.
 
 4. Reducing the Number of LEFT JOINs: The query has multiple LEFT JOINs, which can be expensive in terms of performance. You can try to reduce the number of LEFT JOINs by optimizing the query and removing unnecessary joins.
+Left join will also get any record that are null on the foreign table, which could increase the performance. To avoid this you could try to use INNER JOIN on important table.
 
 Below are the optimized SQL query that i have created for you:
 
@@ -61,7 +62,7 @@ SELECT Jobs.id AS `Jobs__id`,
 FROM jobs Jobs
 INNER JOIN job_categories JobCategories ON JobCategories.id = Jobs.job_category_id AND JobCategories.deleted IS NULL
 INNER JOIN job_types JobTypes ON JobTypes.id = Jobs.job_type_id AND JobTypes.deleted IS NULL
-LEFT JOIN jobs_personalities JobsPersonalities ON Jobs.id = JobsPersonalities.job_id
+INNER JOIN jobs_personalities JobsPersonalities ON Jobs.id = JobsPersonalities.job_id
 LEFT JOIN personalities Personalities ON Personalities.id = JobsPersonalities.personality_id AND Personalities.deleted IS NULL
 LEFT JOIN jobs_practical_skills JobsPracticalSkills ON Jobs.id = JobsPracticalSkills.job_id
 LEFT JOIN practical_skills PracticalSkills ON PracticalSkills.id = JobsPracticalSkills.practical_skill_id AND PracticalSkills.deleted IS NULL
